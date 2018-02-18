@@ -1,0 +1,36 @@
+#!/bin/bash
+
+# Typically, it's easy to generate a hostfile for pssh with only IP
+# addresses, but inconvenient to generate a host file in
+# user@ADDRESS:PORT form, especially you generate a hostfile
+# dynamically from the commandline.
+#
+# This is a wrapper to pssh, able to pass the port information from
+# the environment variable PORT, and silent pssh, no host key checking
+# (slightly insecure, but better for scripting epecially on Cloud
+# machine instances.).
+#
+# Assuming that you can genereate IP lists using pseudo
+# list-hosts-from-cloud command, and you want to use the username,
+# 'USER' and custom port 2222, you could run this script:
+#
+#   $ PORT=2222 ./xpssh -l USER -h <(list-hosts-from-cloud) ...
+#
+PROGRAM_NAME=$(basename $0)
+
+if ! which pssh >/dev/nulll 2>&1; then
+    echo "$PROGRAM_NAME: pssh not found" 1>&2
+    exit 1
+fi
+
+cmdline=(pssh -O LogLevel=QUIET -O UserKnownHostsFile=/dev/null -O StrictHostKeyChecking=no)
+
+if [ -n "$PORT" ]; then
+    cmdline=("${cmdline[@]}" -O Port="$PORT")
+fi
+
+cmdline=("${cmdline[@]}" "$@")
+
+exec "${cmdline[@]}"
+
+    
