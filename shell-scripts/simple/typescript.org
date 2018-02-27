@@ -1,0 +1,140 @@
+
+* scripts
+
+  man =bash(1)= will show you the syntax of =if= compound command.
+
+  In the manual page, A /list/ means one or more commands connected with =;=, =&&=, or =||=.  See the definition of /lists/ in manual page.
+#+BEGIN_SRC sh
+    command1; command2; command3
+    command1 && command2
+    command1 || command2
+#+END_SRC
+
+*** Exit status
+
+    In Unix, all process terminates with integer numeric exit status.  Exit status zero(0) means successful termination of the process,
+    and non-zero indicates failure.
+
+    Exit status of the last executed command can be found at the shell variable =$?=.
+
+*** If compound command
+#+BEGIN_SRC sh
+    if COMMAND...; then           # if COMMAND...; then COMMAND...; fi
+        COMMAND...;
+    fi
+
+    if COMMAND...; then
+        COMMAND...;
+    else
+        COMMAND...;
+    fi
+
+    if COMMAND...; then
+        COMMAND...;
+    elif COMMAND...; then
+        COMMAND...;
+    else
+        COMMAND...;
+    fi
+#+END_SRC
+
+
+#+BEGIN_SRC sh
+  if test -r /bin/ls; then
+      echo "success"
+  else
+      echo "fail"
+  fi
+
+  if [ -r ./bin/ls ]; then
+      echo "success"
+  else
+      echo "fail"
+  fi
+#+END_SRC
+
+#+BEGIN_SRC c
+
+if (...) {
+  printf("success\n");
+}
+else {
+  printf("failure\n");
+}
+
+#+END_SRC
+
+*** Example: test whether python exists
+
+#+BEGIN_SRC sh
+
+  PYTHON="$(which python)"
+  if [ "$?" -eq 0 ]; then
+      echo "python found: $PYTHON"
+  else
+      echo "python not found"
+  fi
+
+  # --------
+
+  PYTHON="$(which python)"
+  if test "$?" -eq 0; then
+      echo "python found: $PYTHON"
+  else
+      echo "python not found"
+  fi
+
+  # --------
+
+  if which python; then
+      echo "python found: $PYTHON"
+  else
+      echo "python not found"
+  fi
+    
+#+END_SRC
+
+
+*** AND and OR 
+
+    In bash, the AND is =&&=, whereas the OR operator is =||=.
+
+    | x     | y     | operator | result |
+    |-------+-------+----------+--------|
+    | true  | true  | AND      | true   |
+    | false | true  | AND      | false  |
+    | true  | false | AND      | false  |
+    | false | false | AND      | false  |
+    |-------+-------+----------+--------|
+    | true  | true  | OR       | true   |
+    | false | true  | OR       | true   |
+    | true  | false | OR       | true   |
+    | false | false | OR       | false  |
+
+
+#+BEGIN_SRC sh
+COUNTER=0
+
+if [ "$COUNTER" -eq 0 ]; then
+  echo "zero"
+fi
+
+[ "$COUNTER" -eq 0 ] && echo "zero"
+
+# ===
+
+if [ ! "$COUNTER" -eq 0 ]; then
+  echo "nonzero"
+fi
+
+[ "$COUNTER" -eq 0 ] || echo "nonzero"
+#+END_SRC
+
+*** grep
+
+#+BEGIN_SRC sh
+grep -o ^[A-Z]*: catalina.2006-01-06.log | sort | uniq
+grep -o ^[A-Z]*: *.log | sort | uniq
+grep -h -o ^[A-Z]*: *.log | sort | uniq
+grep -h -o ^[A-Z]*: *.log | sort | uniq -c
+#+END_SRC    
