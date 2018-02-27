@@ -138,3 +138,9 @@ grep -o ^[A-Z]*: *.log | sort | uniq
 grep -h -o ^[A-Z]*: *.log | sort | uniq
 grep -h -o ^[A-Z]*: *.log | sort | uniq -c
 #+END_SRC    
+
+   - grep options: =-h=, =-H=, =-o=, =-A=, =-B=, =-C=.
+   - sort options: =-r=, =-n=, =-k=, =-u=
+   - uniq options: =-c=.
+
+  
