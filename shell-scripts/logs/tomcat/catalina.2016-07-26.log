@@ -1,0 +1,106 @@
+Jul 26, 2016 12:43:05 PM org.apache.coyote.AbstractProtocol pause
+INFO: Pausing ProtocolHandler ["http-bio-8080"]
+Jul 26, 2016 12:43:05 PM org.apache.coyote.AbstractProtocol pause
+INFO: Pausing ProtocolHandler ["ajp-bio-8009"]
+Jul 26, 2016 12:43:05 PM org.apache.catalina.core.StandardService stopInternal
+INFO: Stopping service Catalina
+Jul 26, 2016 12:43:05 PM org.apache.coyote.AbstractProtocol stop
+INFO: Stopping ProtocolHandler ["http-bio-8080"]
+Jul 26, 2016 12:43:05 PM org.apache.coyote.AbstractProtocol stop
+INFO: Stopping ProtocolHandler ["ajp-bio-8009"]
+Jul 26, 2016 12:43:13 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Server version:        Apache Tomcat/7.0.70
+Jul 26, 2016 12:43:13 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Server built:          Jun 15 2016 16:27:45 UTC
+Jul 26, 2016 12:43:13 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Server number:         7.0.70.0
+Jul 26, 2016 12:43:13 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: OS Name:               Windows Server 2008 R2
+Jul 26, 2016 12:43:13 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: OS Version:            6.1
+Jul 26, 2016 12:43:13 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Architecture:          x86
+Jul 26, 2016 12:43:13 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Java Home:             C:\Program Files (x86)\Java\jre7
+Jul 26, 2016 12:43:13 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: JVM Version:           1.7.0_76-b13
+Jul 26, 2016 12:43:13 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: JVM Vendor:            Oracle Corporation
+Jul 26, 2016 12:43:13 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: CATALINA_BASE:         C:\Program Files (x86)\Apache Software Foundation\Tomcat 7.0
+Jul 26, 2016 12:43:13 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: CATALINA_HOME:         C:\Program Files (x86)\Apache Software Foundation\Tomcat 7.0
+Jul 26, 2016 12:43:13 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Dcatalina.home=C:\Program Files (x86)\Apache Software Foundation\Tomcat 7.0
+Jul 26, 2016 12:43:13 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Dcatalina.base=C:\Program Files (x86)\Apache Software Foundation\Tomcat 7.0
+Jul 26, 2016 12:43:13 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Djava.endorsed.dirs=C:\Program Files (x86)\Apache Software Foundation\Tomcat 7.0\endorsed
+Jul 26, 2016 12:43:13 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Djava.io.tmpdir=C:\Program Files (x86)\Apache Software Foundation\Tomcat 7.0\temp
+Jul 26, 2016 12:43:13 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+Jul 26, 2016 12:43:13 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Djava.util.logging.config.file=C:\Program Files (x86)\Apache Software Foundation\Tomcat 7.0\conf\logging.properties
+Jul 26, 2016 12:43:13 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: exit
+Jul 26, 2016 12:43:13 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Xms128m
+Jul 26, 2016 12:43:13 PM org.apache.catalina.startup.VersionLoggerListener log
+INFO: Command line argument: -Xmx256m
+Jul 26, 2016 12:43:13 PM org.apache.catalina.core.AprLifecycleListener lifecycleEvent
+INFO: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: C:\Program Files (x86)\Apache Software Foundation\Tomcat 7.0\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;c:\program files\eset\eset nod32 antivirus\;C:\Windows\system32;C:\Windows;C:\Windows\system32\wbem;C:\Windows\system32\windowspowershell\v1.0\;C:\dbxml2.5.16x64\bin;c:\program files\tortoisesvn\bin;C:\maven\bin;c:\program files (x86)\git\cmd;c:\program files\ibm\gsk8\lib64;c:\program files (x86)\ibm\gsk8\lib;;C:\PROGRA~1\IBM\SQLLIB\BIN;C:\PROGRA~1\IBM\SQLLIB\FUNCTION;C:\PROGRA~1\IBM\SQLLIB\SAMPLES\REPL;C:\jboss-eap-6.2\bin;C:\chromedriver_win32;;.
+Jul 26, 2016 12:43:13 PM org.apache.coyote.AbstractProtocol init
+INFO: Initializing ProtocolHandler ["http-bio-8080"]
+Jul 26, 2016 12:43:13 PM org.apache.coyote.AbstractProtocol init
+INFO: Initializing ProtocolHandler ["ajp-bio-8009"]
+Jul 26, 2016 12:43:13 PM org.apache.catalina.startup.Catalina load
+INFO: Initialization processed in 1294 ms
+Jul 26, 2016 12:43:13 PM org.apache.catalina.core.StandardService startInternal
+INFO: Starting service Catalina
+Jul 26, 2016 12:43:13 PM org.apache.catalina.core.StandardEngine startInternal
+INFO: Starting Servlet Engine: Apache Tomcat/7.0.70
+Jul 26, 2016 12:43:13 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory C:\Program Files (x86)\Apache Software Foundation\Tomcat 7.0\webapps\docs
+Jul 26, 2016 12:43:14 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deployment of web application directory C:\Program Files (x86)\Apache Software Foundation\Tomcat 7.0\webapps\docs has finished in 534 ms
+Jul 26, 2016 12:43:14 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory C:\Program Files (x86)\Apache Software Foundation\Tomcat 7.0\webapps\manager
+Jul 26, 2016 12:43:14 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deployment of web application directory C:\Program Files (x86)\Apache Software Foundation\Tomcat 7.0\webapps\manager has finished in 125 ms
+Jul 26, 2016 12:43:14 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory C:\Program Files (x86)\Apache Software Foundation\Tomcat 7.0\webapps\ROOT
+Jul 26, 2016 12:43:14 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deployment of web application directory C:\Program Files (x86)\Apache Software Foundation\Tomcat 7.0\webapps\ROOT has finished in 166 ms
+Jul 26, 2016 12:43:14 PM org.apache.coyote.AbstractProtocol start
+INFO: Starting ProtocolHandler ["http-bio-8080"]
+Jul 26, 2016 12:43:14 PM org.apache.coyote.AbstractProtocol start
+INFO: Starting ProtocolHandler ["ajp-bio-8009"]
+Jul 26, 2016 12:43:14 PM org.apache.catalina.startup.Catalina start
+INFO: Server startup in 887 ms
+Jul 26, 2016 1:47:56 PM org.apache.coyote.http11.AbstractHttp11Processor process
+INFO: Error parsing HTTP request header
+ Note: further occurrences of HTTP header parsing errors will be logged at DEBUG level.
+java.lang.IllegalArgumentException: Invalid character found in method name. HTTP method names must be tokens
+	at org.apache.coyote.http11.InternalInputBuffer.parseRequestLine(InternalInputBuffer.java:135)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:996)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:623)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:316)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Unknown Source)
+
+Jul 26, 2016 1:47:56 PM org.apache.coyote.http11.AbstractHttp11Processor process
+INFO: Error parsing HTTP request header
+ Note: further occurrences of HTTP header parsing errors will be logged at DEBUG level.
+java.lang.IllegalArgumentException: Invalid character found in method name. HTTP method names must be tokens
+	at org.apache.coyote.http11.InternalInputBuffer.parseRequestLine(InternalInputBuffer.java:135)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:996)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:623)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:316)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Unknown Source)
+

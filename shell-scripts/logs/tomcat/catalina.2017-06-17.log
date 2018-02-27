@@ -1,0 +1,74 @@
+Jun 17, 2017 3:01:31 AM org.apache.coyote.AbstractProtocol pause
+INFO: Pausing ProtocolHandler ["http-bio-8080"]
+Jun 17, 2017 3:01:31 AM org.apache.coyote.AbstractProtocol pause
+INFO: Pausing ProtocolHandler ["ajp-bio-8009"]
+Jun 17, 2017 3:01:31 AM org.apache.catalina.core.StandardService stopInternal
+INFO: Stopping service Catalina
+Jun 17, 2017 3:01:42 AM org.apache.catalina.loader.WebappClassLoader clearReferencesJdbc
+SEVERE: The web application [] registered the JDBC driver [org.apache.derby.jdbc.AutoloadedDriver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+Jun 17, 2017 3:01:42 AM org.apache.catalina.loader.WebappClassLoader clearReferencesThreads
+SEVERE: The web application [] appears to have started a thread named [Dispatcher-Thread-2] but has failed to stop it. This is very likely to create a memory leak.
+Jun 17, 2017 3:01:42 AM org.apache.catalina.loader.WebappClassLoader clearReferencesThreads
+SEVERE: The web application [] appears to have started a thread named [AWT-Windows] but has failed to stop it. This is very likely to create a memory leak.
+Jun 17, 2017 3:01:42 AM org.apache.catalina.loader.WebappClassLoader checkThreadLocalMapForLeaks
+SEVERE: The web application [] created a ThreadLocal with key of type [org.apache.derby.iapi.sql.dictionary.TableDescriptor$1] (value [org.apache.derby.iapi.sql.dictionary.TableDescriptor$1@42e9c1]) and a value of type [java.util.WeakHashMap] (value [{={1, 3}, ={1, 11, 12, 13}}]) but failed to remove it when the web application was stopped. Threads are going to be renewed over time to try and avoid a probable memory leak.
+Jun 17, 2017 3:01:42 AM org.apache.catalina.loader.WebappClassLoader checkThreadLocalMapForLeaks
+SEVERE: The web application [] created a ThreadLocal with key of type [org.apache.derby.iapi.sql.dictionary.TableDescriptor$1] (value [org.apache.derby.iapi.sql.dictionary.TableDescriptor$1@42e9c1]) and a value of type [java.util.WeakHashMap] (value [{={1, 2, 3}, ={1, 2}, ={1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13}}]) but failed to remove it when the web application was stopped. Threads are going to be renewed over time to try and avoid a probable memory leak.
+Jun 17, 2017 3:01:42 AM org.apache.catalina.loader.WebappClassLoader checkThreadLocalMapForLeaks
+SEVERE: The web application [] created a ThreadLocal with key of type [org.apache.derby.iapi.sql.dictionary.TableDescriptor$1] (value [org.apache.derby.iapi.sql.dictionary.TableDescriptor$1@42e9c1]) and a value of type [java.util.WeakHashMap] (value [{={1, 2, 3, 4}, ={1, 8}, ={1, 2}, =null, =null}]) but failed to remove it when the web application was stopped. Threads are going to be renewed over time to try and avoid a probable memory leak.
+Jun 17, 2017 3:01:42 AM org.apache.catalina.loader.WebappClassLoader checkThreadLocalMapForLeaks
+SEVERE: The web application [] created a ThreadLocal with key of type [org.apache.derby.iapi.sql.dictionary.TableDescriptor$1] (value [org.apache.derby.iapi.sql.dictionary.TableDescriptor$1@42e9c1]) and a value of type [java.util.WeakHashMap] (value [{={1, 2}, ={1, 7, 8}}]) but failed to remove it when the web application was stopped. Threads are going to be renewed over time to try and avoid a probable memory leak.
+Jun 17, 2017 3:01:42 AM org.apache.catalina.loader.WebappClassLoader checkThreadLocalMapForLeaks
+SEVERE: The web application [] created a ThreadLocal with key of type [org.apache.derby.iapi.sql.dictionary.TableDescriptor$1] (value [org.apache.derby.iapi.sql.dictionary.TableDescriptor$1@42e9c1]) and a value of type [java.util.WeakHashMap] (value [{={1, 9}}]) but failed to remove it when the web application was stopped. Threads are going to be renewed over time to try and avoid a probable memory leak.
+Jun 17, 2017 3:01:42 AM org.apache.catalina.loader.WebappClassLoader checkThreadLocalMapForLeaks
+SEVERE: The web application [] created a ThreadLocal with key of type [org.apache.derby.iapi.sql.dictionary.TableDescriptor$1] (value [org.apache.derby.iapi.sql.dictionary.TableDescriptor$1@42e9c1]) and a value of type [java.util.WeakHashMap] (value [{={1, 2, 3, 4, 5, 6, 7}, =null, ={1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12}, =null}]) but failed to remove it when the web application was stopped. Threads are going to be renewed over time to try and avoid a probable memory leak.
+Jun 17, 2017 3:01:43 AM org.apache.coyote.AbstractProtocol stop
+INFO: Stopping ProtocolHandler ["http-bio-8080"]
+Jun 17, 2017 3:01:43 AM org.apache.coyote.AbstractProtocol stop
+INFO: Stopping ProtocolHandler ["ajp-bio-8009"]
+Jun 17, 2017 3:08:00 AM org.apache.catalina.core.AprLifecycleListener init
+INFO: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: C:\Bitnami\wampstack-5.4.32-0\apache2\htdocs\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Common Files\Microsoft Shared\Microsoft Online Services;C:\Program Files (x86)\Common Files\Microsoft Shared\Microsoft Online Services;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Program Files\ActivIdentity\ActivClient\;C:\Program Files (x86)\ActivIdentity\ActivClient\;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\QuickTime\QTSystem\;C:\Program Files (x86)\Common Files\HP\Digital Imaging\bin;C:\Program Files (x86)\HP\Digital Imaging\bin\;C:\Program Files (x86)\HP\Digital Imaging\bin\Qt\Qt 4.3.3C:\Program Files\Java\jdk1.7.0_03/bin;C:\Bitnami\wampstack-5.4.32-0\php;C:\ProgramData\ComposerSetup\bin;C:\Program Files\PostgreSQL\9.1\bin;C:\Bitnami\wampstack-5.4.32-0\apache2\htdocs\OpenKM\tomcat\bin; C:\Program Files\Java\jre7\bin;C:\Program Files\nodejs\;;.
+Jun 17, 2017 3:08:38 AM org.apache.coyote.AbstractProtocol init
+INFO: Initializing ProtocolHandler ["http-bio-8080"]
+Jun 17, 2017 3:08:40 AM org.apache.coyote.AbstractProtocol init
+INFO: Initializing ProtocolHandler ["ajp-bio-8009"]
+Jun 17, 2017 3:08:40 AM org.apache.catalina.startup.Catalina load
+INFO: Initialization processed in 63574 ms
+Jun 17, 2017 3:08:42 AM org.apache.catalina.core.StandardService startInternal
+INFO: Starting service Catalina
+Jun 17, 2017 3:08:42 AM org.apache.catalina.core.StandardEngine startInternal
+INFO: Starting Servlet Engine: Apache Tomcat/7.0.42
+Jun 17, 2017 3:08:43 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory C:\Bitnami\wampstack-5.4.32-0\apache2\htdocs\webapps\docs
+Jun 17, 2017 3:08:50 AM org.apache.catalina.util.SessionIdGenerator createSecureRandom
+INFO: Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [1,781] milliseconds.
+Jun 17, 2017 3:08:52 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory C:\Bitnami\wampstack-5.4.32-0\apache2\htdocs\webapps\manager
+Jun 17, 2017 3:08:53 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory C:\Bitnami\wampstack-5.4.32-0\apache2\htdocs\webapps\ROOT
+Jun 17, 2017 3:29:27 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory C:\Bitnami\wampstack-5.4.32-0\apache2\htdocs\webapps\ROOT99
+Jun 17, 2017 3:29:27 AM org.apache.coyote.AbstractProtocol start
+INFO: Starting ProtocolHandler ["http-bio-8080"]
+Jun 17, 2017 3:29:27 AM org.apache.coyote.AbstractProtocol start
+INFO: Starting ProtocolHandler ["ajp-bio-8009"]
+Jun 17, 2017 3:29:27 AM org.apache.catalina.startup.Catalina start
+INFO: Server startup in 1247352 ms
+Jun 17, 2017 11:40:28 AM org.apache.coyote.AbstractProtocol pause
+INFO: Pausing ProtocolHandler ["http-bio-8080"]
+Jun 17, 2017 11:40:28 AM org.apache.coyote.AbstractProtocol pause
+INFO: Pausing ProtocolHandler ["ajp-bio-8009"]
+Jun 17, 2017 11:40:28 AM org.apache.catalina.core.StandardService stopInternal
+INFO: Stopping service Catalina
+Jun 17, 2017 11:40:33 AM org.apache.catalina.loader.WebappClassLoader clearReferencesJdbc
+SEVERE: The web application [] registered the JDBC driver [org.apache.derby.jdbc.AutoloadedDriver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+Jun 17, 2017 11:40:33 AM org.apache.catalina.loader.WebappClassLoader clearReferencesThreads
+SEVERE: The web application [] appears to have started a thread named [Dispatcher-Thread-2] but has failed to stop it. This is very likely to create a memory leak.
+Jun 17, 2017 11:40:33 AM org.apache.catalina.loader.WebappClassLoader clearReferencesThreads
+SEVERE: The web application [] appears to have started a thread named [AWT-Windows] but has failed to stop it. This is very likely to create a memory leak.
+Jun 17, 2017 11:40:33 AM org.apache.catalina.loader.WebappClassLoader checkThreadLocalMapForLeaks
+SEVERE: The web application [] created a ThreadLocal with key of type [org.apache.derby.iapi.sql.dictionary.TableDescriptor$1] (value [org.apache.derby.iapi.sql.dictionary.TableDescriptor$1@148f534]) and a value of type [java.util.WeakHashMap] (value [{=null, =null}]) but failed to remove it when the web application was stopped. Threads are going to be renewed over time to try and avoid a probable memory leak.
+Jun 17, 2017 11:40:33 AM org.apache.coyote.AbstractProtocol stop
+INFO: Stopping ProtocolHandler ["http-bio-8080"]
+Jun 17, 2017 11:40:33 AM org.apache.coyote.AbstractProtocol stop
+INFO: Stopping ProtocolHandler ["ajp-bio-8009"]

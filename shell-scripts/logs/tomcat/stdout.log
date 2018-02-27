@@ -1,0 +1,178 @@
+log4j: Threshold ="null".
+log4j: Retreiving an instance of org.apache.log4j.Logger.
+log4j: Setting [com] additivity to [true].
+log4j: Level value for com is  [INFO].
+log4j: com level set to INFO
+log4j: Class name: [org.apache.log4j.DailyRollingFileAppender]
+log4j: Setting property [file] to [logs/cms.log].
+log4j: Setting property [append] to [false].
+log4j: Setting property [threshold] to [DEBUG].
+log4j: Setting property [datePattern] to ['.'yyyy-MM-dd].
+log4j: Parsing layout of class: "org.apache.log4j.PatternLayout"
+log4j: Setting property [conversionPattern] to [%d{yyyy-MM-dd HH:mm:ss.SSS} [%7r] %6p - %30.30c - %m%n].
+log4j: setFile called: logs/cms.log, false
+log4j: Adding appender named [CMS_FILE] to category [com].
+log4j: Class name: [org.apache.log4j.ConsoleAppender]
+log4j: Setting property [threshold] to [DEBUG].
+log4j: Setting property [target] to [System.out].
+log4j: Parsing layout of class: "org.apache.log4j.PatternLayout"
+log4j: Setting property [conversionPattern] to [%d{yyyy-MM-dd HH:mm:ss.SSS} [%7r] %6p - %30.30c - %m%n].
+log4j: Adding appender named [CMS_CONSOLE] to category [com].
+log4j: Retreiving an instance of org.apache.log4j.Logger.
+log4j: Setting [org.apache] additivity to [false].
+log4j: Level value for org.apache is  [FATAL].
+log4j: org.apache level set to FATAL
+log4j: Adding appender named [CMS_FILE] to category [org.apache].
+log4j: Adding appender named [CMS_CONSOLE] to category [org.apache].
+log4j:WARN No appenders could be found for logger (tomcat.localhost./admin.Context).
+log4j:WARN Please initialize the log4j system properly.
+2008-05-26 09:11:40.000 [1071250]   INFO -  com.wcm.sysmanage.login.Login - (citylilian)用户于2008/05/26 09:11:40登陆系统！fromip:10.0.10.46
+hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhs
+hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhs
+hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhs
+hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhs
+2008-05-26 10:02:33.187 [4124437]   INFO -  com.wcm.sysmanage.login.Login - (zhengping)用户于2008/05/26 10:02:33登陆系统！fromip:10.0.10.43
+hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhs
+hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhs
+2008-05-26 10:46:09.906 [6741156]   INFO -  com.wcm.sysmanage.login.Login - (citylilian)用户于2008/05/26 10:46:09登陆系统！fromip:10.0.10.46
+hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhs
+hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhs
+2008-05-26 10:46:28.859 [6760109]   INFO -  com.wcm.sysmanage.login.Login - (citylilian)用户于2008/05/26 10:46:28登陆系统！fromip:10.0.10.46
+hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhs
+hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhs
+hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhs
+hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhs
+hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhs
+hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhs
+hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhs
+hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhs
+hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhs
+hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhs
+hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhs
+hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhs
+hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhs
+hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhs
+hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhs
+2008-05-26 13:57:48.281 [18239531]  ERROR - b.tempettag.TempletSubTagParse - 得到常量的值中出现错误：java.lang.NullPointerException
+java.lang.NullPointerException
+	at java.util.StringTokenizer.<init>(StringTokenizer.java:119)
+	at java.util.StringTokenizer.<init>(StringTokenizer.java:135)
+	at com.web.cms.infopub.tempettag.TempletSubTagParse.getSubTagValue(TempletSubTagParse.java:51)
+	at com.web.cms.infopub.tempettag.TempletTagParse.convertTag(TempletTagParse.java:82)
+	at com.web.cms.infopub.templetconvert.TempletShow.resultshowmulfields(TempletShow.java:956)
+	at org.apache.jsp.cms.infopub.resultmulfields_jsp._jspService(resultmulfields_jsp.java:93)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:94)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:802)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:324)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:292)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:236)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:802)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:237)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:157)
+	at com.web.tools.filters.SetCharacterEncodingFilter.doFilter(SetCharacterEncodingFilter.java:74)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:186)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:157)
+	at com.web.commons.SessionFilter.doFilter(SessionFilter.java:186)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:186)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:157)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:214)
+	at org.apache.catalina.core.StandardValveContext.invokeNext(StandardValveContext.java:104)
+	at org.apache.catalina.core.StandardPipeline.invoke(StandardPipeline.java:520)
+	at org.apache.catalina.core.StandardContextValve.invokeInternal(StandardContextValve.java:198)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:152)
+	at org.apache.catalina.core.StandardValveContext.invokeNext(StandardValveContext.java:104)
+	at org.apache.catalina.core.StandardPipeline.invoke(StandardPipeline.java:520)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:137)
+	at org.apache.catalina.core.StandardValveContext.invokeNext(StandardValveContext.java:104)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:118)
+	at org.apache.catalina.core.StandardValveContext.invokeNext(StandardValveContext.java:102)
+	at org.apache.catalina.core.StandardPipeline.invoke(StandardPipeline.java:520)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.core.StandardValveContext.invokeNext(StandardValveContext.java:104)
+	at org.apache.catalina.core.StandardPipeline.invoke(StandardPipeline.java:520)
+	at org.apache.catalina.core.ContainerBase.invoke(ContainerBase.java:929)
+	at org.apache.coyote.tomcat5.CoyoteAdapter.service(CoyoteAdapter.java:160)
+	at org.apache.jk.server.JkCoyoteHandler.invoke(JkCoyoteHandler.java:300)
+	at org.apache.jk.common.HandlerRequest.invoke(HandlerRequest.java:374)
+	at org.apache.jk.common.ChannelSocket.invoke(ChannelSocket.java:743)
+	at org.apache.jk.common.ChannelSocket.processConnection(ChannelSocket.java:675)
+	at org.apache.jk.common.SocketConnection.runIt(ChannelSocket.java:866)
+	at org.apache.tomcat.util.threads.ThreadPool$ControlRunnable.run(ThreadPool.java:683)
+	at java.lang.Thread.run(Thread.java:536)
+2008-05-26 13:57:59.062 [18250312]  ERROR - b.tempettag.TempletSubTagParse - 得到常量的值中出现错误：java.lang.NullPointerException
+java.lang.NullPointerException
+	at java.util.StringTokenizer.<init>(StringTokenizer.java:119)
+	at java.util.StringTokenizer.<init>(StringTokenizer.java:135)
+	at com.web.cms.infopub.tempettag.TempletSubTagParse.getSubTagValue(TempletSubTagParse.java:51)
+	at com.web.cms.infopub.tempettag.TempletTagParse.convertTag(TempletTagParse.java:82)
+	at com.web.cms.infopub.templetconvert.TempletShow.resultshowmulfields(TempletShow.java:956)
+	at org.apache.jsp.cms.infopub.resultmulfields_jsp._jspService(resultmulfields_jsp.java:93)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:94)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:802)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:324)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:292)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:236)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:802)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:237)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:157)
+	at com.web.tools.filters.SetCharacterEncodingFilter.doFilter(SetCharacterEncodingFilter.java:74)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:186)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:157)
+	at com.web.commons.SessionFilter.doFilter(SessionFilter.java:186)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:186)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:157)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:214)
+	at org.apache.catalina.core.StandardValveContext.invokeNext(StandardValveContext.java:104)
+	at org.apache.catalina.core.StandardPipeline.invoke(StandardPipeline.java:520)
+	at org.apache.catalina.core.StandardContextValve.invokeInternal(StandardContextValve.java:198)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:152)
+	at org.apache.catalina.core.StandardValveContext.invokeNext(StandardValveContext.java:104)
+	at org.apache.catalina.core.StandardPipeline.invoke(StandardPipeline.java:520)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:137)
+	at org.apache.catalina.core.StandardValveContext.invokeNext(StandardValveContext.java:104)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:118)
+	at org.apache.catalina.core.StandardValveContext.invokeNext(StandardValveContext.java:102)
+	at org.apache.catalina.core.StandardPipeline.invoke(StandardPipeline.java:520)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.core.StandardValveContext.invokeNext(StandardValveContext.java:104)
+	at org.apache.catalina.core.StandardPipeline.invoke(StandardPipeline.java:520)
+	at org.apache.catalina.core.ContainerBase.invoke(ContainerBase.java:929)
+	at org.apache.coyote.tomcat5.CoyoteAdapter.service(CoyoteAdapter.java:160)
+	at org.apache.jk.server.JkCoyoteHandler.invoke(JkCoyoteHandler.java:300)
+	at org.apache.jk.common.HandlerRequest.invoke(HandlerRequest.java:374)
+	at org.apache.jk.common.ChannelSocket.invoke(ChannelSocket.java:743)
+	at org.apache.jk.common.ChannelSocket.processConnection(ChannelSocket.java:675)
+	at org.apache.jk.common.SocketConnection.runIt(ChannelSocket.java:866)
+	at org.apache.tomcat.util.threads.ThreadPool$ControlRunnable.run(ThreadPool.java:683)
+	at java.lang.Thread.run(Thread.java:536)
+hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhs
+hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhs
+hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhs
+hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhs
+hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhs
+hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhs
+2008-05-26 14:08:14.171 [18865421]   INFO -  com.wcm.sysmanage.login.Login - (bjqcbl )用户于2008/05/26 14:08:14登陆系统！fromip:192.168.255.1
+hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhs
+2008-05-26 14:37:36.578 [20627828]   INFO -  com.wcm.sysmanage.login.Login - (citylilian)用户于2008/05/26 14:37:36登陆系统！fromip:10.0.10.46
+hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhs
+hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhs
+2008-05-26 14:40:23.421 [20794671]   INFO -  com.wcm.sysmanage.login.Login - (szkt)用户于2008/05/26 14:40:23登陆系统！fromip:192.168.255.1
+hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhs
+hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhs
+hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhs
+hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhs
+hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhs
+hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhs
+2008-05-26 14:56:06.359 [21737609]   INFO -  com.wcm.sysmanage.login.Login - (zhengping)用户于2008/05/26 14:56:06登陆系统！fromip:10.0.10.43
+hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhs
+hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhs
+hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhs
+hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhs
+hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhs
+hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhs
+hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhs
+hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhs
+hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhs
+hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhs
+hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhs
+hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhs
