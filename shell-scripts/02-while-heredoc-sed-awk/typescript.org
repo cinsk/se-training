@@ -1,0 +1,101 @@
+
+* agenda
+
+*** DONE while-loop.sh
+    - print number from zero to LIMIT using =while=
+    - get LIIMT from the command-line argument
+
+*** DONE function.sh
+    - explain function in /bash/.
+    - difference betwee =return= and =exit=.
+    - positional parameters
+    - =local= variables.
+
+    - error()
+
+*** TODO Redirection -- heredoc
+
+*** DONE read command
+    - Generate some directories with files tha has some names like =IMG_01234.JPG=
+    - find | while read | tr, mv to rename bunch of file names
+
+    - dirname, basename, sed, tr
+
+*** DONE sed
+    - replace example
+    - inplace example: update cassandra.yaml for new ip address
+
+*** TODO awk
+    - FS, BEGIN, END
+    - process substitution <(...)
+
+    - parsing =/etc/passwd=
+
+
+*** TODO command-line conventions
+    - short options
+    - long options
+    - meaning of =--= 
+    - meaning of =-=
+
+
+*** TODO 02-getopts/getopts.sh
+    - option parsing
+
+*** Assignment
+
+    
+*** Reading list
+
+    - [[https://www.tldp.org/LDP/Bash-Beginners-Guide/html/Bash-Beginners-Guide.html][Bash Guide for Beginners]].  DO ALL EXERCISES!
+
+    - Read Section 4.4, 4.5, 4.7, 4.9 of [[https://www.gnu.org/prep/standards/standards.html][GNU Coding Standards]].
+
+    Note these two docs are quite old, may contain out of date information.
+    - http://www.pathname.com/fhs/pub/fhs-2.3.html
+    - https://www.tldp.org/LDP/Linux-Filesystem-Hierarchy/html/Linux-Filesystem-Hierarchy.html
+
+
+* Typescript
+
+*** While loop
+
+#+BEGIN_SRC sh
+  while COMMAND; do
+    ...
+  end
+#+END_SRC
+
+*** function
+
+#+BEGIN_SRC sh
+  function_name() {
+    ...
+  }
+#+END_SRC
+
+*** shift
+
+#+BEGIN_SRC sh
+# ./tmp.sh one two three four five
+# ^^^^^^^^ ^^^ ^^^ ^^^^^ ^^^^ ^^^^
+# $0       $1  $2  $3    $4   $5
+shift
+
+# ./tmp.sh one two three four five
+# ^^^^^^^^ ^^^ ^^^ ^^^^^ ^^^^ ^^^^
+# $0           $1  $2    $3   $4 
+shift 2
+
+# ./tmp.sh one two three four five
+# ^^^^^^^^ ^^^ ^^^ ^^^^^ ^^^^ ^^^^
+# $0                     $1   $2
+#+END_SRC
+
+
+*** rest
+#+BEGIN_SRC sh
+mkdir aa bb cc
+touch {aa,bb,cc}/IMG_00{0..9}{0..9}.JPG
+sed -e 's/^\( *- *seeds: *\)".*"/\1"10.0.0.1"/' cassandra.yaml
+#+END_SRC
