@@ -1,0 +1,74 @@
+* Command line option conventions
+
+  type of options
+  - short option
+  - long option
+
+  type of options
+  - no argument
+  - optional argument
+  - required argument
+
+
+#+BEGIN_SRC sh
+  $ PROGRAM [OPTION...] [ARGUMENT...]
+  $ PROGRAM [OPTION...] [ARGUMENT...]
+
+  $ PROGRAM -1 -a -v -f 
+  $ PROGRAM -1avf
+
+  $ tar -cv -f file
+  $ tar -cvf file
+  $ tar -f file -cv
+  $ tar -f file -c -v
+
+  $ PROGRAM --help --version --output=XXXX
+  $ PROGRAM --help --version --output --quiet
+
+  # GNU program mandatory options
+  $ PROGRAM --help
+  $ PROGRAM --version
+
+  # JVM based
+  $ java -help 
+
+  $ PROGRAM --output out.txt
+  $ PROGRAM --output=out.txt
+  
+
+#+END_SRC
+    
+
+* find then exec
+#+BEGIN_SRC sh
+  $ ls -i                         # print i-node number as well
+  ...
+  $ find . -inum INODE-NUMBER -exec rm {} \; # find the file with INODE-NUMBER and remove it
+#+END_SRC
+
+
+* force find(1) to follow symbolic links
+
+#+BEGIN_SRC sh
+  $ find . -follow ...
+#+END_SRC
+
+
+* Load average
+  
+  - http://www.brendangregg.com/blog/2017-08-08/linux-load-averages.html
+
+
+* Bash login
+
+#+BEGIN_SRC text
+  login shell -> /etc/profile, $HOME/.bash_profile
+  non-login shell -> $HOME/.bashrc
+#+END_SRC
+
+
+* create triton profiles
+
+#+BEGIN_SRC
+triton datacenters | tail -n +2 | while read pname url; do echo "{ \"url\": \"$url\", \"account\": \"csk\", \"keyId\": \"xxx\" }" | json > "${pname}.json"; done
+#+END_SRC
