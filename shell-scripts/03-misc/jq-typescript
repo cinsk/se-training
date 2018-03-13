@@ -1,0 +1,654 @@
+mystra:~/src/se-training/shell-scripts$ triton instance ls
+SHORTID   NAME        IMG                              STATE    FLAGS  AGE
+f1099abb  varnish     a4bebde7                         running  DF     26w
+19a154e6  smartos     base-64@17.2.0                   running  -      26w
+8c824e06  zk3         centos-7@20161213                running  -      24w
+f1251ff1  zk2         centos-7@20161213                running  -      24w
+aadf93e3  zk1         centos-7@20161213                running  -      24w
+70db2402  bastion     centos-7@20161213                running  -      24w
+7d670f65  kafka3      centos-7@20161213                running  -      24w
+2981f890  kafka2      centos-7@20161213                running  -      24w
+af359c18  kafka1      centos-7@20161213                running  -      24w
+94dd157d  kcentos     centos-7@20170327                running  K      23w
+d3bff1f5  nexus       centos-7@20170327                running  K      23w
+ed41e692  nexus2      centos-7@20161213                running  -      20w
+8da0726a  ubuntu      ubuntu-16.04@20161213            running  -      14w
+d7201136  freebsd     freebsd-11@20170526              running  K      9w
+f562d519  freebsd-10  freebsd-10@20170403              running  K      9w
+ef1c7b92  kubuntu     ubuntu-certified-16.04@20180109  running  K      4w
+e742630d  prometheus  centos-6@20170407                running  -      2w
+mystra:~/src/se-training/shell-scripts$ triton instance get 8da0726a
+{
+    "id": "8da0726a-b0cb-4a82-9556-da4d4bca5368",
+    "name": "ubuntu",
+    "type": "smartmachine",
+    "brand": "lx",
+    "state": "running",
+    "image": "8879c758-c0da-11e6-9e4b-93e32a67e805",
+    "ips": [
+        "72.2.119.52",
+        "10.112.1.230"
+    ],
+    "memory": 1024,
+    "disk": 25600,
+    "metadata": {
+        "root_authorized_keys": "ssh-rsa AAAA...w==\n"
+    },
+    "tags": {},
+    "created": "2017-12-01T22:00:58.037Z",
+    "updated": "2017-12-01T22:01:08.000Z",
+    "networks": [
+        "1fa9fff3-0ea8-42c1-b0a4-b9452221bceb",
+        "56f0fd52-4df1-49bd-af0c-81c717ea8bce"
+    ],
+    "primaryIp": "72.2.119.52",
+    "firewall_enabled": false,
+    "compute_node": "44454c4c-4400-1048-804e-b5c04f383432",
+    "package": "g4-highcpu-1G",
+    "dns_names": [
+        "8da0726a-b0cb-4a82-9556-da4d4bca5368.inst.4c1f6252-1a4c-ede6-8c55-a43908c0c93d.us-east-1.triton.zone",
+        "ubuntu.inst.4c1f6252-1a4c-ede6-8c55-a43908c0c93d.us-east-1.triton.zone",
+        "8da0726a-b0cb-4a82-9556-da4d4bca5368.inst.4c1f6252-1a4c-ede6-8c55-a43908c0c93d.us-east-1.cns.joyent.com",
+        "ubuntu.inst.4c1f6252-1a4c-ede6-8c55-a43908c0c93d.us-east-1.cns.joyent.com"
+    ]
+}
+mystra:~/src/se-training/shell-scripts$ triton instance get 8da0726a | jq
+{
+  "id": "8da0726a-b0cb-4a82-9556-da4d4bca5368",
+  "name": "ubuntu",
+  "type": "smartmachine",
+  "brand": "lx",
+  "state": "running",
+  "image": "8879c758-c0da-11e6-9e4b-93e32a67e805",
+  "ips": [
+    "72.2.119.52",
+    "10.112.1.230"
+  ],
+  "memory": 1024,
+  "disk": 25600,
+  "metadata": {
+    "root_authorized_keys": "ssh-rsa AAAA==\n"
+  },
+  "tags": {},
+  "created": "2017-12-01T22:00:58.037Z",
+  "updated": "2017-12-01T22:01:08.000Z",
+  "networks": [
+    "1fa9fff3-0ea8-42c1-b0a4-b9452221bceb",
+    "56f0fd52-4df1-49bd-af0c-81c717ea8bce"
+  ],
+  "primaryIp": "72.2.119.52",
+  "firewall_enabled": false,
+  "compute_node": "44454c4c-4400-1048-804e-b5c04f383432",
+  "package": "g4-highcpu-1G",
+  "dns_names": [
+    "8da0726a-b0cb-4a82-9556-da4d4bca5368.inst.4c1f6252-1a4c-ede6-8c55-a43908c0c93d.us-east-1.triton.zone",
+    "ubuntu.inst.4c1f6252-1a4c-ede6-8c55-a43908c0c93d.us-east-1.triton.zone",
+    "8da0726a-b0cb-4a82-9556-da4d4bca5368.inst.4c1f6252-1a4c-ede6-8c55-a43908c0c93d.us-east-1.cns.joyent.com",
+    "ubuntu.inst.4c1f6252-1a4c-ede6-8c55-a43908c0c93d.us-east-1.cns.joyent.com"
+  ]
+}
+mystra:~/src/se-training/shell-scripts$ triton instance ls --help
+List instances.
+
+Usage:
+    triton instance ls [OPTIONS] [FILTERS...]
+
+Options:
+    -h, --help          Show this help.
+    --credentials       Include generated credentials, in the
+                        "metadata.credentials" keys, if any. Typically used with
+                        "-j", though one can show values with "-o
+                        metadata.credentials".
+
+  Output options:
+    -H                  Omit table header row.
+    -o field1,...       Specify fields (columns) to output.
+    -l, --long          Long/wider output. Ignored if "-o ..." is used.
+    -s field1,...       Sort on the given fields. Default is "created".
+    -j, --json          JSON output.
+
+Filters:
+    FIELD=VALUE        Equality filter. Supported fields: brand, image,
+                       memory, name, state, tag.TAGNAME, and type.
+    FIELD=true|false   Boolean filter. Supported fields: docker (added in
+                       CloudAPI 8.0.0).
+
+Fields (most are self explanatory, "*" indicates a field added client-side
+for convenience):
+    shortid*           A short ID prefix.
+    flags*             Single letter flags summarizing some fields:
+                           "D" docker instance
+                           "F" firewall is enabled
+                           "K" the brand is "kvm"
+    age*               Approximate time since created, e.g. 1y, 2w.
+    img*               The image "name@version", if available, else its
+                       "shortid".
+
+Examples:
+    triton instance ls -Ho id state=running     # IDs of running insts
+    triton instance ls docker=true tag.foo=bar  # Docker insts w/ "foo=bar" tag
+mystra:~/src/se-training/shell-scripts$ triton instance ls -o id,name,ips,primaryIp
+ID                                    NAME        IPS                                                 PRIMARYIP
+f1099abb-eddd-66bf-cb61-ca7f30de1116  varnish     ["192.168.128.7","72.2.119.171"]                    72.2.119.171
+19a154e6-69d3-4545-f2d0-8219933a16ab  smartos     ["72.2.118.31","10.112.6.3"]                        72.2.118.31
+8c824e06-babb-6778-b6fa-8afde556917e  zk3         ["192.168.128.12"]                                  192.168.128.12
+f1251ff1-4ba2-c63b-a579-b6e4aa9e35b7  zk2         ["192.168.128.13"]                                  192.168.128.13
+aadf93e3-8041-6471-e830-d6027304936f  zk1         ["192.168.128.14"]                                  192.168.128.14
+70db2402-ad4b-6297-a8ea-f84b361160d4  bastion     ["10.112.0.47","165.225.136.229","192.168.128.15"]  165.225.136.229
+7d670f65-0cc2-e840-b7f4-bb7cbbc00731  kafka3      ["192.168.128.16"]                                  192.168.128.16
+2981f890-6775-e151-87ef-981a2dfb6e15  kafka2      ["192.168.128.17"]                                  192.168.128.17
+af359c18-664f-c304-bc49-d1fac16677dd  kafka1      ["192.168.128.18"]                                  192.168.128.18
+94dd157d-50f5-6a21-b87d-c0a96af8e6ed  kcentos     ["192.168.128.19"]                                  192.168.128.19
+d3bff1f5-239c-cf52-9468-a4db4e630b2e  nexus       ["72.2.112.100","192.168.128.21"]                   72.2.112.100
+ed41e692-7b50-ec27-9971-e7f77f78fd6c  nexus2      ["165.225.129.71","10.112.5.199"]                   165.225.129.71
+8da0726a-b0cb-4a82-9556-da4d4bca5368  ubuntu      ["72.2.119.52","10.112.1.230"]                      72.2.119.52
+d7201136-edcc-ee9f-9476-f0349cf8f451  freebsd     ["192.168.128.41"]                                  192.168.128.41
+f562d519-4161-6896-aa65-d9e1f4388365  freebsd-10  ["192.168.128.42"]                                  192.168.128.42
+ef1c7b92-7468-e995-80b5-ed4e26e0a1fa  kubuntu     ["192.168.128.44"]                                  192.168.128.44
+e742630d-1e6f-c8bc-8c12-ecd8c6c5a0b9  prometheus  ["165.225.137.31","10.112.4.233"]                   165.225.137.31
+mystra:~/src/se-training/shell-scripts$ triton instance get 8da0726a | jq
+{
+  "id": "8da0726a-b0cb-4a82-9556-da4d4bca5368",
+  "name": "ubuntu",
+  "type": "smartmachine",
+  "brand": "lx",
+  "state": "running",
+  "image": "8879c758-c0da-11e6-9e4b-93e32a67e805",
+  "ips": [
+    "72.2.119.52",
+    "10.112.1.230"
+  ],
+  "memory": 1024,
+  "disk": 25600,
+  "metadata": {
+    "root_authorized_keys": "ssh-rsa AAAA==\n"
+  },
+  "tags": {},
+  "created": "2017-12-01T22:00:58.037Z",
+  "updated": "2017-12-01T22:01:08.000Z",
+  "networks": [
+    "1fa9fff3-0ea8-42c1-b0a4-b9452221bceb",
+    "56f0fd52-4df1-49bd-af0c-81c717ea8bce"
+  ],
+  "primaryIp": "72.2.119.52",
+  "firewall_enabled": false,
+  "compute_node": "44454c4c-4400-1048-804e-b5c04f383432",
+  "package": "g4-highcpu-1G",
+  "dns_names": [
+    "8da0726a-b0cb-4a82-9556-da4d4bca5368.inst.4c1f6252-1a4c-ede6-8c55-a43908c0c93d.us-east-1.triton.zone",
+    "ubuntu.inst.4c1f6252-1a4c-ede6-8c55-a43908c0c93d.us-east-1.triton.zone",
+    "8da0726a-b0cb-4a82-9556-da4d4bca5368.inst.4c1f6252-1a4c-ede6-8c55-a43908c0c93d.us-east-1.cns.joyent.com",
+    "ubuntu.inst.4c1f6252-1a4c-ede6-8c55-a43908c0c93d.us-east-1.cns.joyent.com"
+  ]
+}
+mystra:~/src/se-training/shell-scripts$ triton instance get 8da0726a | jq .primaryIp
+"72.2.119.52"
+mystra:~/src/se-training/shell-scripts$ triton instance get 8da0726a | jq .dns_names
+[
+  "8da0726a-b0cb-4a82-9556-da4d4bca5368.inst.4c1f6252-1a4c-ede6-8c55-a43908c0c93d.us-east-1.triton.zone",
+  "ubuntu.inst.4c1f6252-1a4c-ede6-8c55-a43908c0c93d.us-east-1.triton.zone",
+  "8da0726a-b0cb-4a82-9556-da4d4bca5368.inst.4c1f6252-1a4c-ede6-8c55-a43908c0c93d.us-east-1.cns.joyent.com",
+  "ubuntu.inst.4c1f6252-1a4c-ede6-8c55-a43908c0c93d.us-east-1.cns.joyent.com"
+]
+mystra:~/src/se-training/shell-scripts$ triton instance get 8da0726a | jq .dns_names[0]
+"8da0726a-b0cb-4a82-9556-da4d4bca5368.inst.4c1f6252-1a4c-ede6-8c55-a43908c0c93d.us-east-1.triton.zone"
+mystra:~/src/se-training/shell-scripts$ triton instance get 8da0726a | jq '[.created, .updated]'
+[
+  "2017-12-01T22:00:58.037Z",
+  "2017-12-01T22:01:08.000Z"
+]
+mystra:~/src/se-training/shell-scripts$ jq --help
+jq - commandline JSON processor [version 1.5]
+Usage: jq [options] <jq filter> [file...]
+
+	jq is a tool for processing JSON inputs, applying the
+	given filter to its JSON text inputs and producing the
+	filter's results as JSON on standard output.
+	The simplest filter is ., which is the identity filter,
+	copying jq's input to its output unmodified (except for
+	formatting).
+	For more advanced filters see the jq(1) manpage ("man jq")
+	and/or https://stedolan.github.io/jq
+
+	Some of the options include:
+	 -c		compact instead of pretty-printed output;
+	 -n		use `null` as the single input value;
+	 -e		set the exit status code based on the output;
+	 -s		read (slurp) all inputs into an array; apply filter to it;
+	 -r		output raw strings, not JSON texts;
+	 -R		read raw strings, not JSON texts;
+	 -C		colorize JSON;
+	 -M		monochrome (don't colorize JSON);
+	 -S		sort keys of objects on output;
+	 --tab	use tabs for indentation;
+	 --arg a v	set variable $a to value <v>;
+	 --argjson a v	set variable $a to JSON value <v>;
+	 --slurpfile a f	set variable $a to an array of JSON texts read from <f>;
+	See the manpage for more options.
+mystra:~/src/se-training/shell-scripts$ triton instance get 8da0726a | jq -c '[.created, .updated]'
+["2017-12-01T22:00:58.037Z","2017-12-01T22:01:08.000Z"]
+mystra:~/src/se-training/shell-scripts$ triton instance get 8da0726a | jq -c '[.created, .updated]|.[]'
+"2017-12-01T22:00:58.037Z"
+"2017-12-01T22:01:08.000Z"
+mystra:~/src/se-training/shell-scripts$ triton instance get 8da0726a | jq -c '[.created, .updated]|.[]|join(" ")'
+jq: error (at <stdin>:34): Cannot iterate over string ("2017-12-01...)
+mystra:~/src/se-training/shell-scripts$ triton instance get 8da0726a | jq -c '[.created, .updated] | .[] | join(" ")'
+jq: error (at <stdin>:34): Cannot iterate over string ("2017-12-01...)
+mystra:~/src/se-training/shell-scripts$ triton instance get 8da0726a | jq -c '[.created, .updated] | .[] | join(" ")'
+jq: error (at <stdin>:34): Cannot iterate over string ("2017-12-01...)
+mystra:~/src/se-training/shell-scripts$ triton instance get 8da0726a | jq -c '[.created, .updated] | .[] | tostring'
+"2017-12-01T22:00:58.037Z"
+"2017-12-01T22:01:08.000Z"
+mystra:~/src/se-training/shell-scripts$ triton instance get 8da0726a | jq -c '[.created, .updated] | .[] | tostring | join(" ")'
+jq: error (at <stdin>:34): Cannot iterate over string ("2017-12-01...)
+mystra:~/src/se-training/shell-scripts$ triton instance get 8da0726a | jq -c '.created, .updated] | join(" ")'
+jq: error: syntax error, unexpected INVALID_CHARACTER, expecting $end (Unix shell quoting issues?) at <top-level>, line 1:
+.created, .updated] | join(" ")                  
+jq: 1 compile error
+
+  ^C ^C
+mystra:~/src/se-training/shell-scripts$ triton instance get 8da0726a | jq -c '[.created, .updated] | join(" ")'
+"2017-12-01T22:00:58.037Z 2017-12-01T22:01:08.000Z"
+mystra:~/src/se-training/shell-scripts$ triton instance get 8da0726a | jq -r -c '[.created, .updated] | join(" ")'
+2017-12-01T22:00:58.037Z 2017-12-01T22:01:08.000Z
+mystra:~/src/se-training/shell-scripts$ triton instance get 8da0726a | jq -r -c '[.created, .updated] | join(",")'
+2017-12-01T22:00:58.037Z,2017-12-01T22:01:08.000Z
+mystra:~/src/se-training/shell-scripts$ triton instance get 8da0726a | jq -r -c '["created", "updated"], [.created, .updated] | join(",")'
+created,updated
+2017-12-01T22:00:58.037Z,2017-12-01T22:01:08.000Z
+mystra:~/src/se-training/shell-scripts$ curl -s --url 'http://165.225.137.31:9090/api/v1/query' --data-urlencode 'query=load_average{instance="kubuntu"}[5m]'  | jq
+{
+  "status": "success",
+  "data": {
+    "resultType": "matrix",
+    "result": [
+      {
+        "metric": {
+          "__name__": "load_average",
+          "instance": "kubuntu",
+          "job": "triton"
+        },
+        "values": [
+          [
+            1520961823.962,
+            "0.046875"
+          ],
+          [
+            1520961838.962,
+            "0.046875"
+          ],
+          [
+            1520961853.961,
+            "0.046875"
+          ],
+          [
+            1520961868.961,
+            "0.046875"
+          ],
+          [
+            1520961883.961,
+            "0.046875"
+          ],
+          [
+            1520961898.961,
+            "0.046875"
+          ],
+          [
+            1520961913.961,
+            "0.046875"
+          ],
+          [
+            1520961928.961,
+            "0.046875"
+          ],
+          [
+            1520961943.961,
+            "0.046875"
+          ],
+          [
+            1520961958.961,
+            "0.046875"
+          ],
+          [
+            1520961973.96,
+            "0.046875"
+          ],
+          [
+            1520961988.96,
+            "0.046875"
+          ],
+          [
+            1520962003.96,
+            "0.046875"
+          ],
+          [
+            1520962018.96,
+            "0.046875"
+          ],
+          [
+            1520962033.96,
+            "0.046875"
+          ],
+          [
+            1520962048.96,
+            "0.046875"
+          ],
+          [
+            1520962063.96,
+            "0.046875"
+          ],
+          [
+            1520962078.96,
+            "0.046875"
+          ],
+          [
+            1520962093.96,
+            "0.046875"
+          ],
+          [
+            1520962108.959,
+            "0.046875"
+          ]
+        ]
+      }
+    ]
+  }
+}
+mystra:~/src/se-training/shell-scripts$ curl -s --url 'http://165.225.137.31:9090/api/v1/query' --data-urlencode 'query=load_average{instance="kubuntu"}[2m]'  | jq
+{
+  "status": "success",
+  "data": {
+    "resultType": "matrix",
+    "result": [
+      {
+        "metric": {
+          "__name__": "load_average",
+          "instance": "kubuntu",
+          "job": "triton"
+        },
+        "values": [
+          [
+            1520962003.96,
+            "0.046875"
+          ],
+          [
+            1520962018.96,
+            "0.046875"
+          ],
+          [
+            1520962033.96,
+            "0.046875"
+          ],
+          [
+            1520962048.96,
+            "0.046875"
+          ],
+          [
+            1520962063.96,
+            "0.046875"
+          ],
+          [
+            1520962078.96,
+            "0.046875"
+          ],
+          [
+            1520962093.96,
+            "0.046875"
+          ],
+          [
+            1520962108.959,
+            "0.046875"
+          ]
+        ]
+      }
+    ]
+  }
+}
+mystra:~/src/se-training/shell-scripts$ curl -s --url 'http://165.225.137.31:9090/api/v1/query' --data-urlencode 'query=load_average{instance="kubuntu"}[1m]'  | jq
+{
+  "status": "success",
+  "data": {
+    "resultType": "matrix",
+    "result": [
+      {
+        "metric": {
+          "__name__": "load_average",
+          "instance": "kubuntu",
+          "job": "triton"
+        },
+        "values": [
+          [
+            1520962078.96,
+            "0.046875"
+          ],
+          [
+            1520962093.96,
+            "0.046875"
+          ],
+          [
+            1520962108.959,
+            "0.046875"
+          ],
+          [
+            1520962123.959,
+            "0.046875"
+          ]
+        ]
+      }
+    ]
+  }
+}
+mystra:~/src/se-training/shell-scripts$ curl -s --url 'http://165.225.137.31:9090/api/v1/query' --data-urlencode 'query=load_average{instance="kubuntu"}[1m]'  | jq '.data.result[0].values'
+[
+  [
+    1520962138.959,
+    "0.046875"
+  ],
+  [
+    1520962153.959,
+    "0.046875"
+  ],
+  [
+    1520962168.959,
+    "0.046875"
+  ],
+  [
+    1520962183.959,
+    "0.046875"
+  ]
+]
+mystra:~/src/se-training/shell-scripts$ curl -s --url 'http://165.225.137.31:9090/api/v1/query' --data-urlencode 'query=load_average{instance="kubuntu"}[1m]'  | jq '.data.result[0].values | map([.[0], [1] | string])'
+jq: error: string/0 is not defined at <top-level>, line 1:
+.data.result[0].values | map([.[0], [1] | string])                                          
+jq: 1 compile error
+(23) Failed writing body
+mystra:~/src/se-training/shell-scripts$ curl -s --url 'http://165.225.137.31:9090/api/v1/query' --data-urlencode 'query=load_average{instance="kubuntu"}[1m]'  | jq '.data.result[0].values | map([.[0], .[1] | string])'
+jq: error: string/0 is not defined at <top-level>, line 1:
+.data.result[0].values | map([.[0], .[1] | string])                                           
+jq: 1 compile error
+(23) Failed writing body
+mystra:~/src/se-training/shell-scripts$ curl -s --url 'http://165.225.137.31:9090/api/v1/query' --data-urlencode 'query=load_average{instance="kubuntu"}[1m]'  | jq '.data.result[0].values | map([.[0] | string, .[1]])
+> '
+jq: error: string/0 is not defined at <top-level>, line 1:
+.data.result[0].values | map([.[0] | string, .[1]])                                     
+jq: 1 compile error
+(23) Failed writing body
+mystra:~/src/se-training/shell-scripts$ curl -s --url 'http://165.225.137.31:9090/api/v1/query' --data-urlencode 'query=load_average{instance="kubuntu"}[1m]'  | jq '.data.result[0].values | map([.[0] | string, .[1]])'
+jq: error: string/0 is not defined at <top-level>, line 1:
+.data.result[0].values | map([.[0] | string, .[1]])                                     
+jq: 1 compile error
+(23) Failed writing body
+mystra:~/src/se-training/shell-scripts$ curl -s --url 'http://165.225.137.31:9090/api/v1/query' --data-urlencode 'query=load_average{instance="kubuntu"}[1m]'  | jq '.data.result[0].values | map(.[0] | string)'
+jq: error: string/0 is not defined at <top-level>, line 1:
+.data.result[0].values | map(.[0] | string)                                    
+jq: 1 compile error
+(23) Failed writing body
+mystra:~/src/se-training/shell-scripts$ curl -s --url 'http://165.225.137.31:9090/api/v1/query' --data-urlencode 'query=load_average{instance="kubuntu"}[1m]'  | jq '.data.result[0].values | map(.[0])'
+[
+  1520962378.957,
+  1520962393.957,
+  1520962408.957,
+  1520962423.957
+]
+mystra:~/src/se-training/shell-scripts$ curl -s --url 'http://165.225.137.31:9090/api/v1/query' --data-urlencode 'query=load_average{instance="kubuntu"}[1m]'  | jq '.data.result[0].values | map(.[0] | tostring)'
+[
+  "1520962393.957",
+  "1520962408.957",
+  "1520962423.957",
+  "1520962438.957"
+]
+mystra:~/src/se-training/shell-scripts$ curl -s --url 'http://165.225.137.31:9090/api/v1/query' --data-urlencode 'query=load_average{instance="kubuntu"}[1m]'  | jq '.data.result[0].values | map([.[0] | tostring, .[1]])'
+jq: error (at <stdin>:0): Cannot index number with number
+mystra:~/src/se-training/shell-scripts$ curl -s --url 'http://165.225.137.31:9090/api/v1/query' --data-urlencode 'query=load_average{instance="kubuntu"}[1m]'  | jq '.data.result[0].values | map([.[0] | tostring])
+>   ^C ^C
+mystra:~/src/se-training/shell-scripts$ curl -s --url 'http://165.225.137.31:9090/api/v1/query' --data-urlencode 'query=load_average{instance="kubuntu"}[1m]'  | jq '.data.result[0].values | map(.[0] | tostring)'
+[
+  "1520962438.957",
+  "1520962453.957",
+  "1520962468.957",
+  "1520962483.957"
+]
+mystra:~/src/se-training/shell-scripts$ curl -s --url 'http://165.225.137.31:9090/api/v1/query' --data-urlencode 'query=load_average{instance="kubuntu"}[1m]'  | jq '.data.result[0].values | map([.[0] | tostring])'
+[
+  [
+    "1520962438.957"
+  ],
+  [
+    "1520962453.957"
+  ],
+  [
+    "1520962468.957"
+  ],
+  [
+    "1520962483.957"
+  ]
+]
+mystra:~/src/se-training/shell-scripts$ curl -s --url 'http://165.225.137.31:9090/api/v1/query' --data-urlencode 'query=load_average{instance="kubuntu"}[1m]'  | jq '.data.result[0].values | map([.[0] | tostring, .[1]])'
+jq: error (at <stdin>:0): Cannot index number with number
+mystra:~/src/se-training/shell-scripts$ curl -s --url 'http://165.225.137.31:9090/api/v1/query' --data-urlencode 'query=load_average{instance="kubuntu"}[1m]'  | jq '.data.result[0].values | map([.[0] | tostring, .[1] ] )'
+jq: error (at <stdin>:0): Cannot index number with number
+mystra:~/src/se-training/shell-scripts$ curl -s --url 'http://165.225.137.31:9090/api/v1/query' --data-urlencode 'query=load_average{instance="kubuntu"}[1m]'  | jq '.data.result[0].values | map(.[0] | tostring, .[1] )'
+jq: error (at <stdin>:0): Cannot index number with number
+mystra:~/src/se-training/shell-scripts$ curl -s --url 'http://165.225.137.31:9090/api/v1/query' --data-urlencode 'query=load_average{instance="kubuntu"}[1m]'  | jq '.data.result[0].values | map(.[1] )'
+[
+  "0.046875",
+  "0.046875",
+  "0.046875",
+  "0.046875"
+]
+mystra:~/src/se-training/shell-scripts$ curl -s --url 'http://165.225.137.31:9090/api/v1/query' --data-urlencode 'query=load_average{instance="kubuntu"}[1m]'  | jq '.data.result[0].values | map([.[0], .[1]] )'
+[
+  [
+    1520962498.956,
+    "0.046875"
+  ],
+  [
+    1520962513.956,
+    "0.046875"
+  ],
+  [
+    1520962528.956,
+    "0.046875"
+  ],
+  [
+    1520962543.956,
+    "0.046875"
+  ]
+]
+mystra:~/src/se-training/shell-scripts$ curl -s --url 'http://165.225.137.31:9090/api/v1/query' --data-urlencode 'query=load_average{instance="kubuntu"}[1m]'  | jq '.data.result[0].values | map([.[0] | tostring, .[1]] )'
+jq: error (at <stdin>:0): Cannot index number with number
+mystra:~/src/se-training/shell-scripts$ curl -s --url 'http://165.225.137.31:9090/api/v1/query' --data-urlencode 'query=load_average{instance="kubuntu"}[1m]'  | jq '.data.result[0].values | map([.[0], .[1] | tostring] )'
+[
+  [
+    "1520962513.956",
+    "0.046875"
+  ],
+  [
+    "1520962528.956",
+    "0.046875"
+  ],
+  [
+    "1520962543.956",
+    "0.046875"
+  ],
+  [
+    "1520962558.956",
+    "0.046875"
+  ]
+]
+mystra:~/src/se-training/shell-scripts$ curl -s --url 'http://165.225.137.31:9090/api/v1/query' --data-urlencode 'query=load_average{instance="kubuntu"}[1m]'  | jq '.data.result[0].values | map([.[0], .[1] | tostring] )'
+[
+  [
+    "1520962528.956",
+    "0.046875"
+  ],
+  [
+    "1520962543.956",
+    "0.046875"
+  ],
+  [
+    "1520962558.956",
+    "0.046875"
+  ],
+  [
+    "1520962573.956",
+    "0.046875"
+  ]
+]
+mystra:~/src/se-training/shell-scripts$ curl -s --url 'http://165.225.137.31:9090/api/v1/query' --data-urlencode 'query=load_average{instance="kubuntu"}[1m]'  | jq '.data.result[0].values | map([.[0], .[1] | tostring] ) | .[]'
+[
+  "1520962543.956",
+  "0.046875"
+]
+[
+  "1520962558.956",
+  "0.046875"
+]
+[
+  "1520962573.956",
+  "0.046875"
+]
+[
+  "1520962588.956",
+  "0.046875"
+]
+mystra:~/src/se-training/shell-scripts$ curl -s --url 'http://165.225.137.31:9090/api/v1/query' --data-urlencode 'query=load_average{instance="kubuntu"}[1m]'  | jq '.data.result[0].values | map([.[0], .[1] | tostring] ) | ["time", "value"], .[]'
+[
+  "time",
+  "value"
+]
+[
+  "1520962573.956",
+  "0.046875"
+]
+[
+  "1520962588.956",
+  "0.046875"
+]
+[
+  "1520962603.956",
+  "0.046875"
+]
+[
+  "1520962618.956",
+  "0.046875"
+]
+mystra:~/src/se-training/shell-scripts$ curl -s --url 'http://165.225.137.31:9090/api/v1/query' --data-urlencode 'query=load_average{instance="kubuntu"}[1m]'  | jq '.data.result[0].values | map([.[0], .[1] | tostring] ) | ["time", "value"], .[] | join(" ")'
+"time value"
+"1520962588.956 0.046875"
+"1520962603.956 0.046875"
+"1520962618.956 0.046875"
+"1520962633.955 0.046875"
+mystra:~/src/se-training/shell-scripts$ curl -s --url 'http://165.225.137.31:9090/api/v1/query' --data-urlencode 'query=load_average{instance="kubuntu"}[1m]'  | jq -r '.data.result[0].values | map([.[0], .[1] | tostring] ) | ["time", "value"], .[] | join(" ")'
+time value
+1520962603.956 0.046875
+1520962618.956 0.046875
+1520962633.955 0.046875
+1520962648.955 0.046875
+mystra:~/src/se-training/shell-scripts$ curl -s --url 'http://165.225.137.31:9090/api/v1/query' --data-urlencode 'query=load_average{instance="kubuntu"}[1m]'  | jq -r '.data.result[0].values | map([.[0], .[1] | tostring] ) | ["time", "value"], .[] | join(",")'
+time,value
+1520962618.956,0.046875
+1520962633.955,0.046875
+1520962648.955,0.046875
+1520962663.955,0.046875
+mystra:~/src/se-training/shell-scripts$ 
